@@ -7,6 +7,8 @@
 
 	include('config/global.php');
 
+	if (!$_POST) die('no post');
+
 	foreach($_POST as $key => $value) {
 		if($value) {
 			$post[$key] = $value;

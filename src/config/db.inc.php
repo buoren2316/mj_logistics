@@ -39,11 +39,11 @@ class DBSQL {
 		if(empty($this->CONN)) return false;	//连接为空返回FALSE
  
 		// Start memcache
-		$mem = new Memcache;
-		$mem->connect('127.0.0.1', 11211) or die ("Could not connect");
+		//$mem = new Memcache;
+		//$mem->connect('127.0.0.1', 11211) or die ("Could not connect");
 
-		$key = md5($sql);
-		if ( !($datas = $mem->get($key)) ) {
+		//$key = md5($sql);
+		//if ( !($datas = $mem->get($key)) ) {
 
 			$results = mysql_query($sql,$this->CONN);
 			if(!$results || empty($results)) {	//如果查询结果为空则释放结果并返回FALSE
@@ -55,14 +55,14 @@ class DBSQL {
 
 			while ($row=mysql_fetch_array($results)) {	//查询结果重组成二维数组
 				$data[$count] = $row;
-				$mem->add($count,$row,300);
+				//$mem->add($count,$row,300);
 				$count++;
 
 			}
 			@mysql_free_result($results);
-		}else{
-			$data = $mem->get($key);
-		}
+		//}else{
+		//	$data = $mem->get($key);
+		//}
 		return $data;
 	}
 

@@ -99,3 +99,5 @@ define('ServerName', 'www.muchj.cn');
 define('UserName', 'myuser');
 define('PassWord', 'test');
 define('DBName', 'logistics');
+
+$sign =	array('admin' => 'admin' , 'passwd' => '482c811da5d5b4bc6d497ffa98491e38');
