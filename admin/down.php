@@ -26,8 +26,8 @@
 		print('<script>history.back(-1);</script>');
 	}
 
-
-	$today = $post['date'] ? $post['date'] : date("Y-m-d");
+	$today = date("Y-m-d");
+	if ($post['date']) $today = $post['date'];
 
 	
 	if ($post['submit'] == '导出') {

