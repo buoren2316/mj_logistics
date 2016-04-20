@@ -4,3 +4,6 @@
 
 username 'admin'
 password 'password123'
+
+#management
+/admin
